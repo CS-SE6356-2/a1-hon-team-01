@@ -15,8 +15,8 @@ class NamePrinter {
         String separator = ",";
 
         String[] names = {
-                "Name 1",
-                "Name 2",
+                "Antonio Mendiola",
+                "Ben Grawe",
                 "Shivam Dutt"};
 
         System.out.println(String.join(separator, names));
