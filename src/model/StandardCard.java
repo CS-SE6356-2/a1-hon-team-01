@@ -8,13 +8,13 @@ import java.util.Objects;
 /**
  * A card from the standard 52-card playing deck, with a suit and value.
  */
-public final class StandardCard implements Card {
+public final class StandardCard implements Card, Comparable<StandardCard> {
 	public static final List<StandardCard> ALL_CARDS = makeCards();
 	
 	private static final List<StandardCard> makeCards() {
 		List<StandardCard> cards = new ArrayList<>(Suit.values().length * Value.values().length);
-		for (final Suit suit: Suit.values()) {
-			for (final Value value: Value.values()) {
+		for (final Value value: Value.values()) {
+			for (final Suit suit: Suit.values()) {
 				cards.add(new StandardCard(suit, value));
 			}
 		}
@@ -81,12 +81,26 @@ public final class StandardCard implements Card {
 		this.value = value;
 	}
 	
+	public StandardCard(final StandardCard copy) {
+		this.suit = copy.suit;
+		this.value = copy.value;
+	}
+	
 	public Suit getSuit() {
 		return suit;
 	}
 	
 	public Value getValue() {
 		return value;
+	}
+
+	@Override
+	public int compareTo(final StandardCard other) {
+		int ret = getValue().compareTo(other.getValue());
+		if (ret != 0)
+			return ret;
+		ret = getSuit().compareTo(other.getSuit());
+		return ret;
 	}
 
 	@Override
