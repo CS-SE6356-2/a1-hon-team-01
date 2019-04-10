@@ -11,7 +11,7 @@ import java.util.Objects;
 public final class StandardCard implements Card {
 	public static final List<StandardCard> ALL_CARDS = makeCards();
 	
-	private static final List<StandardCard> makeCards() {
+	private static List<StandardCard> makeCards() {
 		List<StandardCard> cards = new ArrayList<>(Suit.values().length * Value.values().length);
 		for (final Suit suit: Suit.values()) {
 			for (final Value value: Value.values()) {
@@ -21,7 +21,7 @@ public final class StandardCard implements Card {
 		return Collections.unmodifiableList(cards);
 	}
 	
-	public static enum Suit {
+	public enum Suit {
 		CLUBS, DIAMONDS, HEARTS, SPADES;
 		
 		public char toCharacter() {
@@ -54,7 +54,7 @@ public final class StandardCard implements Card {
 			}
 		}
 	}
-	public static enum Value {
+	public enum Value {
 		ACE, NUM2, NUM3, NUM4, NUM5, NUM6, NUM7, NUM8, NUM9, NUM10, JACK, QUEEN, KING;
 		
 		public String toShortString() {
@@ -81,11 +81,11 @@ public final class StandardCard implements Card {
 		this.value = value;
 	}
 	
-	public Suit getSuit() {
+	Suit getSuit() {
 		return suit;
 	}
 	
-	public Value getValue() {
+	Value getValue() {
 		return value;
 	}
 
