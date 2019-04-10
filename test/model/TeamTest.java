@@ -8,9 +8,9 @@ import org.junit.jupiter.api.Test;
 
 class TeamTest {
 	
-	Team team;
-	Player player1;
-	Player player2;
+	private Team team;
+	private Player player1;
+	private Player player2;
 	
     @BeforeEach
     void setUp() {

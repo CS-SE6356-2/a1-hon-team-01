@@ -42,6 +42,6 @@ class StandardCardTest {
 
     @Test
     void toStringTest() {
-    	assertEquals(card.toString(), "A"+'\u2663');
+    	assertEquals(card.toString(), "A"+"C"/*'\u2663'*/);
     }
 }

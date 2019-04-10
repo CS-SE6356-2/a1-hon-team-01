@@ -1,18 +1,17 @@
 package model;
 
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-
 import java.util.ArrayList;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 
+import static org.junit.jupiter.api.Assertions.*;
+
 class PlayerTest {
 	
-	Player player;
-	Player player2;
+	private Player player;
+	private Player player2;
 	
     @BeforeEach
     void setUp() {
@@ -33,7 +32,7 @@ class PlayerTest {
             assertNotNull(player.getDeck(i));
             assertTrue(player.getDeck(i) instanceof ArrayList);
     		for(int j=0;j<player2.getDeckAmount();j++){
-    			assertTrue(player.getDeck(i) != player2.getDeck(j));
+                assertNotSame(player.getDeck(i), player2.getDeck(j));
     		}
     	}
     }

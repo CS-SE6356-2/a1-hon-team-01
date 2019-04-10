@@ -108,6 +108,6 @@ public final class StandardCard implements Card {
 
 	@Override
 	public String toString() {
-		return value.toShortString() + suit.toSymbol();
+		return value.toShortString() + suit.toCharacter();
 	}
 }
