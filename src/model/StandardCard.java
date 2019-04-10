@@ -27,15 +27,30 @@ public final class StandardCard implements Card {
 		public char toCharacter() {
 			switch (this) {
 			case CLUBS:
-				return '\u2663';
+				return 'C';
 			case DIAMONDS:
-				return '\u2666';
+				return 'D';
 			case HEARTS:
-				return '\u2665';
+				return 'H';
 			case SPADES:
-				return '\u2660';
+				return 'S';
 			default:
 				throw new IllegalStateException();
+			}
+		}
+
+		public char toSymbol() {
+			switch (this) {
+				case CLUBS:
+					return '\u2663';
+				case DIAMONDS:
+					return '\u2666';
+				case HEARTS:
+					return '\u2665';
+				case SPADES:
+					return '\u2660';
+				default:
+					throw new IllegalStateException();
 			}
 		}
 	}
@@ -93,6 +108,6 @@ public final class StandardCard implements Card {
 
 	@Override
 	public String toString() {
-		return value.toShortString() + suit.toCharacter();
+		return value.toShortString() + suit.toSymbol();
 	}
 }

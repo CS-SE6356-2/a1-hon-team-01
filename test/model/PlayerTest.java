@@ -1,10 +1,11 @@
 package model;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.ArrayList;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 
@@ -29,9 +30,10 @@ class PlayerTest {
     @Test
     void getDeck() {
     	for(int i=0;i<player.getDeckAmount();i++){
-    		assertTrue(player.getDeck(i) instanceof ArrayList);
-    		for(int j=0;j<player.getDeckAmount();j++){
-    			assertTrue(player.getDeck(i) != player.getDeck(j));
+            assertNotNull(player.getDeck(i));
+            assertTrue(player.getDeck(i) instanceof ArrayList);
+    		for(int j=0;j<player2.getDeckAmount();j++){
+    			assertTrue(player.getDeck(i) != player2.getDeck(j));
     		}
     	}
     }

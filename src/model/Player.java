@@ -10,6 +10,9 @@ public class Player {
 	
 	public Player(final int deckCount) {
 		decks = new ArrayList[deckCount];
+		for(int i = 0; i < deckCount; i++){
+			decks[i] = new ArrayList<Card>();
+		}
 	}
 	
 	public ArrayList getDeck(final int index) {
