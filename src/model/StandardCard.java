@@ -11,7 +11,7 @@ import java.util.Objects;
 public final class StandardCard implements Card, Comparable<StandardCard> {
 	public static final List<StandardCard> ALL_CARDS = makeCards();
 	
-	private static final List<StandardCard> makeCards() {
+	private static List<StandardCard> makeCards() {
 		List<StandardCard> cards = new ArrayList<>(Suit.values().length * Value.values().length);
 		for (final Value value: Value.values()) {
 			for (final Suit suit: Suit.values()) {
