@@ -30,7 +30,6 @@ class PlayerTest {
     void getDeck() {
     	for(int i=0;i<player.getDeckAmount();i++){
             assertNotNull(player.getDeck(i));
-            assertTrue(player.getDeck(i) instanceof ArrayList);
     		for(int j=0;j<player2.getDeckAmount();j++){
                 assertNotSame(player.getDeck(i), player2.getDeck(j));
     		}
