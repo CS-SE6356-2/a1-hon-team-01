@@ -1,6 +1,7 @@
 package model;
 
-import java.util.ArrayList;
+
+import java.util.List;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.AfterEach;
@@ -22,15 +23,20 @@ class PlayerTest {
     void tearDown() {
     }
 
-    /* Tests if the decks were constructed properly and that no two players have received
-     * the same deck. Also tests if getDeck returns a Player's deck.
+    /* Tests if the decks were constructed properly:
+     * - every deck should be non-null
+     * - every deck should be empty
+     * - no two players should have the same deck
      */
     @Test
-    	for(int i=0;i<player.getDeckAmount();i++){
-            assertNotNull(player.getDeck(i));
-    		for(int j=0;j<player2.getDeckAmount();j++){
-                assertNotSame(player.getDeck(i), player2.getDeck(j));
     void getDeckTest() {
+    	for (int i = 0; i < player.getDeckCount(); ++i) {
+    		final List<Card> deck = player.getDeck(i);
+            assertNotNull(deck);
+            assertTrue(deck.isEmpty());
+    		for (int j = 0; j < player2.getDeckCount(); ++j) {
+        		final List<Card> deck2 = player2.getDeck(j);
+                assertNotSame(deck, deck2);
     		}
     	}
     }
