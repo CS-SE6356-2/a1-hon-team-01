@@ -15,4 +15,8 @@ public class Player {
 	public ArrayList getDeck(final int index) {
 		return decks[index];
 	}
+	
+	public int getDeckAmount(){
+		return decks.length;
+	}
 }
