@@ -9,7 +9,6 @@ import org.junit.jupiter.api.BeforeEach;
 import static org.junit.jupiter.api.Assertions.*;
 
 class PlayerTest {
-	
 	private Player player;
 	private Player player2;
 	
@@ -27,11 +26,11 @@ class PlayerTest {
      * the same deck. Also tests if getDeck returns a Player's deck.
      */
     @Test
-    void getDeck() {
     	for(int i=0;i<player.getDeckAmount();i++){
             assertNotNull(player.getDeck(i));
     		for(int j=0;j<player2.getDeckAmount();j++){
                 assertNotSame(player.getDeck(i), player2.getDeck(j));
+    void getDeckTest() {
     		}
     	}
     }
