@@ -14,7 +14,7 @@ class Team {
 		this.players = players.clone();
 	}
 	
-	public List<Player> getPlayers() {
+	List<Player> getPlayers() {
 		return Collections.unmodifiableList(Arrays.asList(players));
 	}
 }

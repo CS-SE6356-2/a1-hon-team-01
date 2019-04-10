@@ -26,19 +26,16 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        gui = new SampleUIController();
         root = new Group();
-        Text text = new Text();
-        text.setFont(new Font(45));
-        text.setX(200);
-        text.setY(100);
-        text.setText("Card Game Project Title");
-        root.getChildren().add(text);
         Scene scene = new Scene(root, 1280, 720);
         scene.setFill(Color.NAVY);
         primaryStage.setTitle("Card Game Project");
         primaryStage.setScene(scene);
         primaryStage.show();
+
+        //GUI Testing
+        gui = new SampleUIController();
+        gui.drawText(StandardCard.ALL_CARDS.get(0).toString(), 100, 100);
         gui.drawCard(StandardCard.ALL_CARDS.get(0), false, 350, 315);
         gui.drawCard(StandardCard.ALL_CARDS.get(0), true, 300, 300);
         gui.drawDeck(StandardCard.ALL_CARDS, false, 500, 300);

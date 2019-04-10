@@ -1,6 +1,5 @@
 package model;
 
-
 import java.util.List;
 
 import org.junit.jupiter.api.Test;
@@ -10,13 +9,13 @@ import org.junit.jupiter.api.BeforeEach;
 import static org.junit.jupiter.api.Assertions.*;
 
 class PlayerTest {
-	private Player player;
+	private Player player1;
 	private Player player2;
 	
     @BeforeEach
     void setUp() {
-    	player = new Player(3);
-    	player2 = new Player(3);
+    	player1 = new Player(3);
+    	player2 = new Player(5);
     }
 
     @AfterEach
@@ -30,8 +29,8 @@ class PlayerTest {
      */
     @Test
     void getDeckTest() {
-    	for (int i = 0; i < player.getDeckCount(); ++i) {
-    		final List<Card> deck = player.getDeck(i);
+    	for (int i = 0; i < player1.getDeckCount(); ++i) {
+    		final List<Card> deck = player1.getDeck(i);
             assertNotNull(deck);
             assertTrue(deck.isEmpty());
     		for (int j = 0; j < player2.getDeckCount(); ++j) {
@@ -39,5 +38,11 @@ class PlayerTest {
                 assertNotSame(deck, deck2);
     		}
     	}
+    }
+
+    @Test
+    void getDeckCount() {
+        assertEquals(3, player1.getDeckCount());
+        assertEquals(5, player2.getDeckCount());
     }
 }
