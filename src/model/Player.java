@@ -21,6 +21,6 @@ public class Player {
 	}
 	
 	public int getDeckCount() {
-		return decks.lengt;
+		return decks.length;
 	}
 }
